@@ -1,18 +1,13 @@
-# ahmet’s macOS Setup
+# scranton's macOS Setup
+_forked from https://github.com/ahmetb/dotfiles_
 
 ## OS Settings
 
 > TODO: find `defaults write` commands for these.
 
-- Invert Trackpad Scroll Direction to non-natural.
-- Show battery percentage on menu bar.
-- Show date on menu bar.
-- Keyboard &rarr; Text &rarr; Uncheck autocorrect and such settings.
 - Remove useless items from the Dock.
-- Move Dock to right, make it smaller.
 - Drag `Downloads` folder next to the Trash on the Dock.
   - Right Click &rarr; Sort by Date Added.
-- Show Path Bar on Finder.
 - Move $HOME folder to Finder sidebar.
 
 - Set shortcuts
@@ -20,14 +15,17 @@
   - Screenshots: Save selected area to file: Cmd+Shift+4
   - Screenshots: Save selected area to clipboard: Cmd+Shift+3
   - Screenshots: Uncheck others
-- Hot Corners:
-  - Top-left: Put Display to Sleep
-  - Clear other corners
 
 Tweaks:
 
-```
-defaults write NSGlobalDomain AppleShowScrollBars -string "Always" # show scrollbar always
+```sh
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false # Turn off autocorrect
+
+defaults write com.apple.finder ShowPathbar -bool true # Show Finder Path Bar
+
+defaults write com.apple.dock.plist wvous-tl-corner -int 10 # Hot Corner Top Left: Put Display to Sleep
+
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always" # Show scrollbar always
 defaults write com.apple.finder AppleShowAllFiles true   # Show hidden files
 defaults write com.apple.finder ShowStatusBar -bool true # Show Finder statusbar
 
@@ -37,7 +35,7 @@ defaults write com.apple.finder NewWindowTarget -string "PfLo" && \
 
 chflags nohidden ~/Library                               # Unhide ~/Library
 
-# disable smart quotes and dashes
+# Disable smart quotes and dashes
 defaults write 'Apple Global Domain' NSAutomaticDashSubstitutionEnabled 0
 defaults write 'Apple Global Domain' NSAutomaticQuoteSubstitutionEnabled 0
 defaults write 'Apple Global Domain' NSAutomaticPeriodSubstitutionEnabled 0
@@ -55,16 +53,6 @@ Install oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh
 
 - Run `which brew` to confirm the one in home directory is picked up.
 - Run `brew analytics off`
-
-## Installing software manually
-
-- Download Dropbox
-  - Sign in 
-  - Sync only 1Password
-- Download iPassword 6
-  - Choose .opvault file from Dropbox
-  - Go to Software Licenses &rarr; open the 1Password license file
-  - Accept to use 1Password Mini when prompted
 
 ## Installing software via Homebrew
 
@@ -84,7 +72,7 @@ Some things that require manual installation after Homebrew:
 ```sh
 # if pip requires sudo, something is wrong, because the
 # Homebrew bundle should install a $USER-writable over system-python.
-    
+
 pip install virtualenv
 pip install virtualenvwrapper
 ```
@@ -151,10 +139,3 @@ Save this to ~/.ssh/config:
 Test connection:
 
     ssh -T git@github.com -i ~/.ssh/github_rsa
-
-
-## Hardware
-
-- Evoluent ergo mouse driver: https://evoluent.com/support/download/
-- Das Keyboard
-  - Settings &rarr; Keyboard &rarr; Modifier Keys: flip the Option/Command keys for "daskeyboard" profile.

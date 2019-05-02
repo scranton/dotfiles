@@ -2,6 +2,7 @@
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
+tap 'solo-io/tap'
 
 # System tools
 brew 'gettext', args: ['force-bottle']
@@ -23,12 +24,13 @@ brew 'screen', args: ['force-bottle']
 brew 'ncurses', args: ['force-bottle']
 brew 'pv', args: ['force-bottle']
 brew 'unrar', args: ['force-bottle']
+brew 'sleepwatcher', args: ['force-bottle']
 
 # Development & Power Tools
 cask 'iterm2'
 cask 'visual-studio-code'
 brew 'bash', args: ['force-bottle']
-brew 'bash-completion', args: ['force-bottle']
+brew 'bash-completion@2', args: ['force-bottle']
 brew 'zsh-syntax-highlighting'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
@@ -68,6 +70,20 @@ brew 'shellcheck', args: ['force-bottle']
 brew 'telnet', args: ['force-bottle']
 brew 'mitmproxy', args: ['force-bottle']
 brew 'fortio', args: ['force-bottle']
+brew 'gdb', args: ['force-bottle']
+brew 'maven', args: ['force-bottle']
+cask 'java'
+cask 'java8'
+cask 'jetbrains-toolbox'
+cask 'sourcetree'
+brew 'draft', args: ['force-bottle']
+brew 'bazel', args: ['force-bottle']
+
+# Solo.io CLI Tools
+brew 'solo-io/tap/glooctl'
+brew 'solo-io/tap/squashctl'
+brew 'solo-io/tap/supergloo'
+brew 'solo-io/tap/sqoopctl'
 
 # Commit signing
 brew 'pinentry-mac', args: ['force-bottle']
@@ -76,15 +92,20 @@ cask 'keybase'
 
 # Containers
 brew 'kubernetes-cli'
+brew 'openshift-cli'
 brew 'kubernetes-helm'
 brew 'kubectx', args: ['force-bottle']
 brew 'kube-ps1', args: ['force-bottle']
 cask 'minikube'
+cask 'minishift'
 brew 'docker-machine-driver-xhyve', args: ['force-bottle']
 brew 'skaffold', args: ['force-bottle']
 brew 'kustomize', args: ['force-bottle']
 brew 'cfssl', args: ['force-bottle']
 cask 'docker' # docker for desktop
+brew 'awscli', args: ['force-bottle']
+brew 'eksctl', args: ['force-bottle']
+brew 'azure-cli', args: ['force-bottle']
 
 # Fun tools
 brew 'asciinema', args: ['force-bottle']
@@ -106,4 +127,9 @@ cask '1password'
 cask 'dropbox'
 cask 'google-chrome'
 cask 'coconutbattery'
-cask 'firefox'
+cask 'istat-menus'
+cask 'gimp'
+cask 'oni'
+cask 'postman'
+cask 'grammarly'
+cask 'cleanmymac'

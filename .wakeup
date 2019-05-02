@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+PATH=$PATH:/usr/local/bin
+if [[ $(minikube status --format {{.Host}}) != "Stopped" ]]; then
+	minikube ssh -- docker run -i --rm --privileged --pid=host debian nsenter -t 1 -m -u -n -i hwclock -s
+fi

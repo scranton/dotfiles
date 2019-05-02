@@ -1,14 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-EMAIL_1="ahmetb"
-EMAIL_2="google.com"
+EMAIL_1="scott.cranton"
+EMAIL_2="solo.io"
 
 set -x
 
 # author
-git config --global user.name "Ahmet Alp Balkan"
+git config --global user.name "Scott Cranton"
 git config --global user.email "${EMAIL_1}@${EMAIL_2}"
 
 # use https remotes and osxkeychain for creds

@@ -30,7 +30,6 @@ else
 	echo >&2 "WARNING: can't load shell aliases"
 fi
 
-
 # User configuration
 export EDITOR=vim
 
@@ -93,18 +92,17 @@ fi
 
 # iTerm2 integration
 if [ -e "${HOME}/.iterm2_shell_integration.zsh" ]; then
-  source "${HOME}/.iterm2_shell_integration.zsh"
+	source "${HOME}/.iterm2_shell_integration.zsh"
 else
-  log "WARNING: skipping loading iterm2 shell integration"
+	log "WARNING: skipping loading iterm2 shell integration"
 fi
 
 # GPG integration: https://gist.github.com/bmhatfield/cc21ec0a3a2df963bffa3c1f884b676b
 if [ -f "$HOME/.gnupg/gpg_profile" ] && command -v gpg-agent > /dev/null; then
-  source "$HOME/.gnupg/gpg_profile"
+	source "$HOME/.gnupg/gpg_profile"
 else
-  log "WARNING: skipping loading gpg-agent"
+	log "WARNING: skipping loading gpg-agent"
 fi
-
 
 # kubectl completion (w/ refresh cache every 48-hours)
 if command -v kubectl > /dev/null; then

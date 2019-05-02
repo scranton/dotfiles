@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 IFS=$'\n\t'
 set -xeou pipefail
 
@@ -50,9 +50,7 @@ GOPKGS=(
 	# misc
 	github.com/shurcooL/markdownfmt \
 	github.com/cpuguy83/go-md2man \
-	golang.org/x/vgo \
-	github.com/rakyll/hey \
-	github.com/ahmetb/iamutil
+	github.com/rakyll/hey
 	)
 
 GOPATH="$GOTOOLS" go get -u "${GOPKGS[@]}"

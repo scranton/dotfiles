@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 IFS=$'\n\t'
 set -xeou pipefail
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -13,7 +13,8 @@ for f in .zshrc \
 	.github_username \
 	.gitignore_global \
 	.kubectl_aliases \
-	.tmux.conf; do
+	.tmux.conf \
+	.wakeup; do
 	if [ -f "$HOME/$f" ]; then rm "$HOME/$f"; fi
 	ln -sf "$SCRIPT_DIR/$f" "$HOME/$f"
 done
