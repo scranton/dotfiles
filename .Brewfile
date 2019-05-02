@@ -26,6 +26,7 @@ brew 'ncurses', args: ['force-bottle']
 brew 'pv', args: ['force-bottle']
 brew 'unrar', args: ['force-bottle']
 brew 'sleepwatcher', args: ['force-bottle']
+cask 'gpg-suite'
 
 # Development & Power Tools
 cask 'iterm2'
