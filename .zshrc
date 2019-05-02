@@ -4,7 +4,7 @@
 
 	# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 	# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-	plugins=(git colored-man-pages zsh-completions zsh-autosuggestions)
+	plugins=(git colored-man-pages zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
 	source "$ZSH/oh-my-zsh.sh"
 
 	export UPDATE_ZSH_DAYS=14
@@ -139,11 +139,11 @@ if [[ -d "/Users/$USER/workspace/dotfiles/bin" ]]; then
 fi
 
 # load zsh plugins installed via brew
-if [[ -d "$HOMEBREW/share/zsh-syntax-highlighting" ]]; then
-	source "$HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
 if [[ -d "$HOMEBREW/share/zsh-autosuggestions" ]]; then
 	source "$HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+if [[ -d "$HOMEBREW/share/zsh-syntax-highlighting" ]]; then
+	source "$HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
 # krew plugins

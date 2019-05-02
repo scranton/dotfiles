@@ -3,6 +3,7 @@ tap 'caskroom/cask'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'solo-io/tap'
+tap 'weaveworks/tap'
 
 # System tools
 brew 'gettext', args: ['force-bottle']
@@ -31,6 +32,7 @@ cask 'iterm2'
 cask 'visual-studio-code'
 brew 'bash', args: ['force-bottle']
 brew 'bash-completion@2', args: ['force-bottle']
+brew 'zsh'
 brew 'zsh-syntax-highlighting'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
@@ -50,6 +52,7 @@ brew 'ruby', args: ['force-bottle']
 brew 'python2', args: ['force-bottle']
 brew 'python3', args: ['force-bottle']
 brew 'openssl', args: ['force-bottle']
+brew 'ldns', args: ['force-bottle']
 brew 'openssh', args: ['force-bottle']
 brew 'protobuf', args: ['force-bottle']
 brew 'prototool', args: ['force-bottle']
@@ -76,7 +79,7 @@ cask 'java'
 cask 'java8'
 cask 'jetbrains-toolbox'
 cask 'sourcetree'
-brew 'draft', args: ['force-bottle']
+brew 'azure/draft/draft'
 brew 'bazel', args: ['force-bottle']
 
 # Solo.io CLI Tools
@@ -98,13 +101,13 @@ brew 'kubectx', args: ['force-bottle']
 brew 'kube-ps1', args: ['force-bottle']
 cask 'minikube'
 cask 'minishift'
-brew 'docker-machine-driver-xhyve', args: ['force-bottle']
+brew 'docker-machine-driver-hyperkit', args: ['force-bottle']
 brew 'skaffold', args: ['force-bottle']
 brew 'kustomize', args: ['force-bottle']
 brew 'cfssl', args: ['force-bottle']
 cask 'docker' # docker for desktop
 brew 'awscli', args: ['force-bottle']
-brew 'eksctl', args: ['force-bottle']
+brew 'weaveworks/tap/eksctl'
 brew 'azure-cli', args: ['force-bottle']
 
 # Fun tools

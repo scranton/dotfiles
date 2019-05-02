@@ -45,6 +45,12 @@ defaults write 'Apple Global Domain' NSAutomaticPeriodSubstitutionEnabled 0
 
 Install oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh
 
+```sh
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+chsh -s /bin/zsh
+```
+
 ## Package manager
 
 - Install Homebrew &mdash;to `$HOME/.homebrew` instead of /usr/local:
