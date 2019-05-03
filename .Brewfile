@@ -4,6 +4,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'solo-io/tap'
 tap 'weaveworks/tap'
+tap 'AdoptOpenJDK/openjdk'
 
 # System tools
 brew 'gettext', args: ['force-bottle']
@@ -49,6 +50,7 @@ brew 'hub', args: ['force-bottle']
 brew 'jq', args: ['force-bottle']
 brew 'node', args: ['force-bottle']
 brew 'rust', args: ['force-bottle']
+brew 'libyaml', args: ['force-bottle']
 brew 'ruby', args: ['force-bottle']
 brew 'python2', args: ['force-bottle']
 brew 'python3', args: ['force-bottle']
@@ -76,8 +78,9 @@ brew 'mitmproxy', args: ['force-bottle']
 brew 'fortio', args: ['force-bottle']
 brew 'gdb', args: ['force-bottle']
 brew 'maven', args: ['force-bottle']
-cask 'java'
-cask 'java8'
+cask 'adoptopenjdk/openjdk/adoptopenjdk8'
+cask 'adoptopenjdk/openjdk/adoptopenjdk11'
+cask 'adoptopenjdk'
 cask 'jetbrains-toolbox'
 cask 'sourcetree'
 brew 'azure/draft/draft'
