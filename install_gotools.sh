@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 IFS=$'\n\t'
 set -xeou pipefail
 
@@ -20,7 +21,7 @@ GOPKGS=(
 	github.com/cweill/gotests/... \
 	github.com/derekparker/delve/cmd/dlv \
 	github.com/fatih/gomodifytags \
-	github.com/golang/lint/golint \
+	golang.org/x/lint/golint \
 	github.com/haya14busa/goplay/cmd/goplay \
 	github.com/josharian/impl \
 	github.com/nsf/gocode \
@@ -46,6 +47,7 @@ GOPKGS=(
 	github.com/golang/protobuf/protoc-gen-go \
 	github.com/spf13/cobra/cobra \
 	github.com/ahmetb/govvv \
+	github.com/go-delve/delve/cmd/dlv \
 
 	# misc
 	github.com/shurcooL/markdownfmt \
