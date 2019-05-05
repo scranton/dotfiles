@@ -48,6 +48,7 @@ GOPKGS=(
 	github.com/spf13/cobra/cobra \
 	github.com/ahmetb/govvv \
 	github.com/go-delve/delve/cmd/dlv \
+	sigs.k8s.io/kind \
 
 	# misc
 	github.com/shurcooL/markdownfmt \
