@@ -57,4 +57,3 @@ GOPKGS=(
 	)
 
 GOPATH="$GOTOOLS" go get -u "${GOPKGS[@]}"
-

@@ -12,6 +12,10 @@
 	<integer>1</integer>
 	<key>AppleWindowTabbingMode</key>
 	<string>manual</string>
+	<key>BracketedPasteMode</key>
+	<false/>
+	<key>ConvertDosNewlines</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Builtin Solarized Dark</key>
@@ -568,6 +572,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>7187740A-B73F-41B7-AC1B-86B18EAA9E2B</string>
+	<key>EscapeShellCharsWithBackslash</key>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
@@ -617,11 +623,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 489 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1587 673 796 486 -1920 170 1920 1057 </string>
+	<string>-1587 712 1018 447 -1920 170 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-958 170 956 1057 -1920 170 1920 1057 </string>
+	<string>63 608 585 377 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-958 170 956 1057 -1920 170 1920 1057 </string>
+	<string>344 650 585 377 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 650 570 377 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -1263,10 +1269,24 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
+	<integer>0</integer>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
+	<true/>
+	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
+	<key>NoSyncInstallUtilitiesPackage</key>
+	<true/>
+	<key>NoSyncInstallUtilitiesPackage_selection</key>
+	<integer>0</integer>
 	<key>NoSyncInstallationId</key>
 	<string>08B72E11-86F6-4F25-B7EC-E6FF84D67AB6</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -1280,6 +1300,16 @@
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
+	<false/>
+	<key>PasteSpecialChunkDelay</key>
+	<real>0.01</real>
+	<key>PasteSpecialChunkSize</key>
+	<integer>1024</integer>
+	<key>PasteSpecialRegex</key>
+	<string></string>
+	<key>PasteSpecialSubstitution</key>
+	<string></string>
+	<key>PasteSpecialUseRegexSubstitution</key>
 	<false/>
 	<key>PointerActions</key>
 	<dict>
@@ -1325,7 +1355,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-05-02T20:19:41Z</date>
+	<date>2019-05-06T17:40:02Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
