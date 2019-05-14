@@ -14,7 +14,7 @@
 	# ENABLE_CORRECTION="true"
 
 	# Uncomment the following line to display red dots whilst waiting for completion.
-	#COMPLETION_WAITING_DOTS="true"
+	# COMPLETION_WAITING_DOTS="true"
 
 # Load custom functions
 if [[ -f "$HOME/workspace/dotfiles/zsh_functions.inc" ]]; then
@@ -37,12 +37,13 @@ export EDITOR=vim
 eval "$(/usr/libexec/path_helper -s)"
 
 # Homebrew install path customization
-	export HOMEBREW="$HOME/.homebrew"
-	if [ ! -d "$HOMEBREW" ]; then
-		# fallback
-		echo >&2 "[~/.zshrc] WARNING: brew path $HOMEBREW not found, defaulting to /usr/local"
-		export HOMEBREW=/usr/local
-	fi
+	export HOMEBREW="/usr/local"
+	# export HOMEBREW="$HOME/.homebrew"
+	# if [ ! -d "$HOMEBREW" ]; then
+	# 	# fallback
+	# 	echo >&2 "[~/.zshrc] WARNING: brew path $HOMEBREW not found, defaulting to /usr/local"
+	# 	export HOMEBREW=/usr/local
+	# fi
 	PATH="$HOMEBREW/bin:$HOMEBREW/sbin:$PATH"
 
 	# Add zsh completion scripts installed via Homebrew
@@ -67,7 +68,8 @@ PATH="$HOMEBREW/opt/openssl/bin:$PATH"
 PATH="$HOMEBREW/opt/ruby/bin:$PATH"
 
 # go tools
-PATH="$PATH:$HOME/gotools/bin"
+export GOPATH="$HOME/go"
+PATH="$PATH:$GOPATH/bin"
 
 # git: use system ssh for git, otherwise UseKeychain option doesn't work
 export GIT_SSH=/usr/bin/ssh

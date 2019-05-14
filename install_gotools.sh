@@ -11,7 +11,7 @@ if [[ -L /usr/local/bin/goclone ]]; then
 	fi
 fi
 
-GOTOOLS=~/gotools
+GOTOOLS="$GOPATH"
 mkdir -p "$GOTOOLS"
 GOPKGS=(
 	# vscode-go tools
@@ -48,7 +48,7 @@ GOPKGS=(
 	github.com/spf13/cobra/cobra \
 	github.com/ahmetb/govvv \
 	github.com/go-delve/delve/cmd/dlv \
-	sigs.k8s.io/kind \
+	# sigs.k8s.io/kind \
 
 	# misc
 	github.com/shurcooL/markdownfmt \

@@ -4,7 +4,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'solo-io/tap'
 tap 'weaveworks/tap'
-tap 'AdoptOpenJDK/openjdk'
+tap 'adoptopenjdk/openjdk'
 
 # System tools
 brew 'gettext', args: ['force-bottle']

@@ -53,10 +53,11 @@ chsh -s /bin/zsh
 
 ## Package manager
 
-- Install Homebrew &mdash;to `$HOME/.homebrew` instead of /usr/local:
+<!-- - Install Homebrew &mdash;to `$HOME/.homebrew` instead of /usr/local:
 
       git clone https://github.com/Homebrew/brew.git $HOME/.homebrew
-
+ -->
+- Run `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 - Run `which brew` to confirm the one in home directory is picked up.
 - Run `brew analytics off`
 
@@ -100,8 +101,8 @@ pip install virtualenvwrapper
 - **minikube** xhyve driver:
 
       # minikube uses xhyve, which requires privileged access to the hypervisor
-      sudo chown root:wheel /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-      sudo chmod u+s /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+      sudo chown root:wheel /usr/local/opt/docker-machine-driver-hyperkit/bin/docker-machine-driver-hyperkit
+      sudo chmod u+s /usr/local/opt/docker-machine-driver-hyperkit/bin/docker-machine-driver-hyperkit
 
 ## Settings Sync
 
