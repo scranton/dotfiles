@@ -5,6 +5,7 @@ tap 'homebrew/core'
 tap 'solo-io/tap'
 tap 'weaveworks/tap'
 tap 'adoptopenjdk/openjdk'
+tap 'azure/draft'
 
 # System tools
 brew 'gettext', args: ['force-bottle']
@@ -77,12 +78,12 @@ brew 'telnet', args: ['force-bottle']
 brew 'mitmproxy', args: ['force-bottle']
 brew 'fortio', args: ['force-bottle']
 brew 'gdb', args: ['force-bottle']
-brew 'maven', args: ['force-bottle']
 cask 'adoptopenjdk/openjdk/adoptopenjdk8'
 cask 'adoptopenjdk/openjdk/adoptopenjdk11'
 cask 'adoptopenjdk'
 cask 'jetbrains-toolbox'
 cask 'sourcetree'
+brew 'maven', args: ['force-bottle']
 brew 'azure/draft/draft'
 brew 'bazel', args: ['force-bottle']
 
@@ -123,20 +124,18 @@ brew 'hg', args: ['force-bottle']
 brew 'etcd', args: ['force-bottle']
 
 # Desktop Software
-cask 'clipy'
 cask 'recordit'
 cask 'zoomus'
 cask 'flux'
 cask 'slack'
 cask 'spectacle'
-cask 'spotify'
 cask '1password'
 cask 'dropbox'
 cask 'google-chrome'
-cask 'coconutbattery'
 cask 'istat-menus'
 cask 'gimp'
 cask 'oni'
 cask 'postman'
 cask 'grammarly'
 cask 'cleanmymac'
+cask 'chai'
