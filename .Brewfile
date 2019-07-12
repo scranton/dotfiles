@@ -96,7 +96,7 @@ brew 'solo-io/tap/sqoopctl'
 # Commit signing
 brew 'pinentry-mac', args: ['force-bottle']
 brew 'gnupg', args: ['force-bottle']
-cask 'keybase'
+# cask 'keybase'
 
 # Containers
 brew 'kubernetes-cli'
@@ -124,7 +124,7 @@ brew 'hg', args: ['force-bottle']
 brew 'etcd', args: ['force-bottle']
 
 # Desktop Software
-cask 'recordit'
+# cask 'recordit'
 cask 'zoomus'
 cask 'flux'
 cask 'slack'

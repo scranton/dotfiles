@@ -1,20 +1,20 @@
 # ZSH settings
-	export ZSH=/Users/$USER/.oh-my-zsh
-	ZSH_THEME="robbyrussell"
+export ZSH=/Users/$USER/.oh-my-zsh
+ZSH_THEME="robbyrussell"
 
-	# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-	# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-	plugins=(git colored-man-pages zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
-	source "$ZSH/oh-my-zsh.sh"
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+plugins=(git colored-man-pages zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
+source "$ZSH/oh-my-zsh.sh"
 
-	export UPDATE_ZSH_DAYS=14
-	export DISABLE_UPDATE_PROMPT=true # accept updates by default
+export UPDATE_ZSH_DAYS=14
+export DISABLE_UPDATE_PROMPT=true # accept updates by default
 
-	# Uncomment the following line to enable command auto-correction.
-	# ENABLE_CORRECTION="true"
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-	# Uncomment the following line to display red dots whilst waiting for completion.
-	# COMPLETION_WAITING_DOTS="true"
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
 
 # Load custom functions
 if [[ -f "$HOME/workspace/dotfiles/zsh_functions.inc" ]]; then
@@ -37,18 +37,18 @@ export EDITOR=vim
 eval "$(/usr/libexec/path_helper -s)"
 
 # Homebrew install path customization
-	export HOMEBREW="/usr/local"
-	# export HOMEBREW="$HOME/.homebrew"
-	# if [ ! -d "$HOMEBREW" ]; then
-	# 	# fallback
-	# 	echo >&2 "[~/.zshrc] WARNING: brew path $HOMEBREW not found, defaulting to /usr/local"
-	# 	export HOMEBREW=/usr/local
-	# fi
-	PATH="$HOMEBREW/bin:$HOMEBREW/sbin:$PATH"
+export HOMEBREW="/usr/local"
+# export HOMEBREW="$HOME/.homebrew"
+# if [ ! -d "$HOMEBREW" ]; then
+# 	# fallback
+# 	echo >&2 "[~/.zshrc] WARNING: brew path $HOMEBREW not found, defaulting to /usr/local"
+# 	export HOMEBREW=/usr/local
+# fi
+PATH="$HOMEBREW/bin:$HOMEBREW/sbin:$PATH"
 
-	# Add zsh completion scripts installed via Homebrew
-	fpath=("$HOMEBREW/share/zsh-completions" $fpath)
-	fpath=("$HOMEBREW/share/zsh/site-functions" $fpath)
+# Add zsh completion scripts installed via Homebrew
+fpath=("$HOMEBREW/share/zsh-completions" $fpath)
+fpath=("$HOMEBREW/share/zsh/site-functions" $fpath)
 
 # Reload the zsh-completions
 autoload -U compinit && compinit
@@ -159,3 +159,20 @@ fi
 
 # finally, export the PATH
 export PATH
+
+# ---------------------- MAKE PAINFULLY SLOW PASTE FAST ---------------------- #
+
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238#issuecomment-389324292
+
+# This speeds up pasting with autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+	OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+	zle -N self-insert url-quote-magic
+}
+
+pastefinish() {
+	zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
