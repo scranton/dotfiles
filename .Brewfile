@@ -2,10 +2,11 @@
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
-tap 'solo-io/tap'
+tap 'solo-io/tap', pin: true
 tap 'weaveworks/tap'
-tap 'adoptopenjdk/openjdk'
+tap 'adoptopenjdk/openjdk', pin: true
 tap 'azure/draft'
+tap 'bazelbuild/tap', pin: true
 
 # System tools
 brew 'gettext', args: ['force-bottle']
@@ -85,7 +86,13 @@ cask 'jetbrains-toolbox'
 cask 'sourcetree'
 brew 'maven', args: ['force-bottle']
 brew 'azure/draft/draft'
-brew 'bazel', args: ['force-bottle']
+brew 'bazelbuild/tap/bazel', args: ['force-bottle']
+brew 'autoconf', args: ['force-bottle']
+brew 'automake', args: ['force-bottle']
+brew 'cmake', args: ['force-bottle']
+brew 'ninja', args: ['force-bottle']
+brew 'libtool', args: ['force-bottle']
+brew 'gcc', args: ['force-bottle']
 
 # Solo.io CLI Tools
 brew 'solo-io/tap/glooctl'
