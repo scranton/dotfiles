@@ -93,6 +93,7 @@ brew 'cmake', args: ['force-bottle']
 brew 'ninja', args: ['force-bottle']
 brew 'libtool', args: ['force-bottle']
 brew 'gcc', args: ['force-bottle']
+brew 'grpcurl', args: ['force-bottle']
 
 # Solo.io CLI Tools
 brew 'solo-io/tap/glooctl'

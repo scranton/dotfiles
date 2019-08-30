@@ -1,3 +1,5 @@
+# shellcheck disable=SC2034
+
 # ZSH settings
 export ZSH=/Users/$USER/.oh-my-zsh
 ZSH_THEME="robbyrussell"
@@ -17,14 +19,14 @@ export DISABLE_UPDATE_PROMPT=true # accept updates by default
 # COMPLETION_WAITING_DOTS="true"
 
 # Load custom functions
-if [[ -f "$HOME/workspace/dotfiles/zsh_functions.inc" ]]; then
+if [[ -f $HOME/workspace/dotfiles/zsh_functions.inc ]]; then
 	source "$HOME/workspace/dotfiles/zsh_functions.inc"
 else
 	echo >&2 "WARNING: can't load shell functions"
 fi
 
 # Load custom aliases
-if [[ -f "$HOME/workspace/dotfiles/zsh_aliases.inc" ]]; then
+if [[ -f $HOME/workspace/dotfiles/zsh_aliases.inc ]]; then
 	source "$HOME/workspace/dotfiles/zsh_aliases.inc"
 else
 	echo >&2 "WARNING: can't load shell aliases"
@@ -78,7 +80,7 @@ export GIT_SSH=/usr/bin/ssh
 PATH="$HOMEBREW/opt/python/libexec/bin:$PATH"
 
 # virtualenvwrapper
-if [ -f "$HOMEBREW/bin/virtualenvwrapper.sh" ]; then
+if [[ -f $HOMEBREW/bin/virtualenvwrapper.sh ]]; then
 	export WORKON_HOME=$HOME/workspace/.virtualenvs
 	source "$HOMEBREW/bin/virtualenvwrapper.sh"
 else
@@ -86,7 +88,7 @@ else
 fi
 
 # gcloud completion scripts via brew cask installation
-if [ -f "$HOMEBREW/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]; then # brew cask installation
+if [[ -f $HOMEBREW/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc ]]; then # brew cask installation
 	source "$HOMEBREW/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 	source "$HOMEBREW/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 else
@@ -94,14 +96,14 @@ else
 fi
 
 # iTerm2 integration
-if [ -e "${HOME}/.iterm2_shell_integration.zsh" ]; then
+if [[ -e $HOME/.iterm2_shell_integration.zsh ]]; then
 	source "${HOME}/.iterm2_shell_integration.zsh"
 else
 	log "WARNING: skipping loading iterm2 shell integration"
 fi
 
 # GPG integration: https://gist.github.com/bmhatfield/cc21ec0a3a2df963bffa3c1f884b676b
-if [ -f "$HOME/.gnupg/gpg_profile" ] && command -v gpg-agent > /dev/null; then
+if [[ -f $HOME/.gnupg/gpg_profile ]] && command -v gpg-agent > /dev/null; then
 	source "$HOME/.gnupg/gpg_profile"
 else
 	log "WARNING: skipping loading gpg-agent"
@@ -176,3 +178,8 @@ pastefinish() {
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/nomad nomad
+
+export GOOGLE_CLOUD_KEYFILE_JSON=~/scripts/secret/solo-test-b99dc348c705.json
