@@ -112,7 +112,7 @@ brew 'openshift-cli'
 brew 'kubernetes-helm'
 brew 'kubectx', args: ['force-bottle']
 brew 'kube-ps1', args: ['force-bottle']
-cask 'minikube'
+brew 'minikube', args: ['force-bottle']
 cask 'minishift'
 brew 'docker-machine-driver-hyperkit', args: ['force-bottle']
 brew 'skaffold', args: ['force-bottle']

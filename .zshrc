@@ -90,14 +90,14 @@ fi
 # gcloud completion scripts via brew cask installation
 if [[ -f $HOMEBREW/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc ]]; then # brew cask installation
 	source "$HOMEBREW/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-	source "$HOMEBREW/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+    source "$HOMEBREW/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 else
 	log "WARNING: skipping loading gcloud completion"
 fi
 
 # iTerm2 integration
 if [[ -e $HOME/.iterm2_shell_integration.zsh ]]; then
-	source "${HOME}/.iterm2_shell_integration.zsh"
+	source "$HOME/.iterm2_shell_integration.zsh"
 else
 	log "WARNING: skipping loading iterm2 shell integration"
 fi
@@ -131,7 +131,7 @@ fi
 [ -f ~/.kubectl_aliases ] && source <(cat ~/.kubectl_aliases | sed -r 's/(kubectl.*) --watch/watch \1/g')
 
 # kube-ps1
-if [[ -f "$HOMEBREW/opt/kube-ps1/share/kube-ps1.sh" ]]; then
+if [[ -f $HOMEBREW/opt/kube-ps1/share/kube-ps1.sh ]]; then
 	export KUBE_PS1_PREFIX='{'
 	export KUBE_PS1_SUFFIX='}'
 	source "$HOMEBREW/opt/kube-ps1/share/kube-ps1.sh"
@@ -139,15 +139,15 @@ if [[ -f "$HOMEBREW/opt/kube-ps1/share/kube-ps1.sh" ]]; then
 fi
 
 # add dotfiles/bin to PATH
-if [[ -d "/Users/$USER/workspace/dotfiles/bin" ]]; then
+if [[ -d /Users/$USER/workspace/dotfiles/bin ]]; then
 	PATH="/Users/$USER/workspace/dotfiles/bin:${PATH}"
 fi
 
 # load zsh plugins installed via brew
-if [[ -d "$HOMEBREW/share/zsh-autosuggestions" ]]; then
+if [[ -d $HOMEBREW/share/zsh-autosuggestions ]]; then
 	source "$HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
-if [[ -d "$HOMEBREW/share/zsh-syntax-highlighting" ]]; then
+if [[ -d $HOMEBREW/share/zsh-syntax-highlighting ]]; then
 	source "$HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
