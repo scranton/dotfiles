@@ -89,11 +89,7 @@ pip install virtualenvwrapper
 - **Spectacle**
   - Security->Accessibility: Give access
   - Launch at Login
-- **Clipy**
-  - Launch at Login
-  - Hide from Menu Bar
-  - Set history size to 200
-  - Set paste key to <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>
+
 - **fzf** completion scripts:
 
       "$HOMEBREW"/opt/fzf/install
@@ -130,14 +126,14 @@ Run:
 
 Generate key with a password:
 
-    ssh-keygen -f $HOME/.ssh/github_rsa
+    ssh-keygen -f $HOME/.ssh/id_rsa
 
 (You may want to redact hostname from the public key.)
 
 Add key to the keychain:
 
-    ssh-add $HOME/.ssh/github_rsa          # company-installed
-    /usr/bin/ssh-add $HOME/.ssh/github_rsa # system
+    ssh-add $HOME/.ssh/id_rsa          # company-installed
+    /usr/bin/ssh-add $HOME/.ssh/id_rsa # system
 
 Upload the key to GitHub. https://github.com/settings/keys
 
@@ -145,4 +141,4 @@ Save this to ~/.ssh/config:
 
 Test connection:
 
-    ssh -T git@github.com -i ~/.ssh/github_rsa
+    ssh -T git@github.com -i ~/.ssh/id_rsa
