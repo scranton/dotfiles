@@ -180,6 +180,7 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/nomad nomad
 
-export GOOGLE_CLOUD_KEYFILE_JSON=~/scripts/secret/solo-test-b99dc348c705.json
+# JEnv setup
+export PATH="${HOME}/.jenv/bin:${PATH}"
+eval "$(jenv init -)"

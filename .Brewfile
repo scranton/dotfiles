@@ -1,8 +1,8 @@
 # vim: syntax=ruby filetype=ruby
+
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
-tap 'solo-io/tap', pin: true
 tap 'weaveworks/tap'
 tap 'adoptopenjdk/openjdk', pin: true
 tap 'azure/draft'
@@ -73,14 +73,14 @@ brew 'wdiff', args: ['force-bottle']
 brew 'entr', args: ['force-bottle']
 brew 'bats', args: ['force-bottle']
 brew 'tldr', args: ['force-bottle']
-brew 'hugo', args: ['force-bottle']
 brew 'shellcheck', args: ['force-bottle']
 brew 'telnet', args: ['force-bottle']
 brew 'mitmproxy', args: ['force-bottle']
 brew 'fortio', args: ['force-bottle']
 brew 'gdb', args: ['force-bottle']
-cask 'adoptopenjdk/openjdk/adoptopenjdk8'
-cask 'adoptopenjdk/openjdk/adoptopenjdk11'
+
+brew 'jenv', args: ['force-bottle']
+
 cask 'adoptopenjdk'
 cask 'jetbrains-toolbox'
 cask 'sourcetree'
@@ -95,16 +95,9 @@ brew 'libtool', args: ['force-bottle']
 brew 'gcc', args: ['force-bottle']
 brew 'grpcurl', args: ['force-bottle']
 
-# Solo.io CLI Tools
-brew 'solo-io/tap/glooctl'
-brew 'solo-io/tap/squashctl'
-brew 'solo-io/tap/supergloo'
-brew 'solo-io/tap/sqoopctl'
-
 # Commit signing
 brew 'pinentry-mac', args: ['force-bottle']
 brew 'gnupg', args: ['force-bottle']
-# cask 'keybase'
 
 # Containers
 brew 'kubernetes-cli'
@@ -113,7 +106,6 @@ brew 'kubernetes-helm'
 brew 'kubectx', args: ['force-bottle']
 brew 'kube-ps1', args: ['force-bottle']
 brew 'minikube', args: ['force-bottle']
-cask 'minishift'
 brew 'docker-machine-driver-hyperkit', args: ['force-bottle']
 brew 'skaffold', args: ['force-bottle']
 brew 'kustomize', args: ['force-bottle']
@@ -132,7 +124,6 @@ brew 'hg', args: ['force-bottle']
 brew 'etcd', args: ['force-bottle']
 
 # Desktop Software
-# cask 'recordit'
 cask 'zoomus'
 cask 'flux'
 cask 'slack'
@@ -141,9 +132,6 @@ cask '1password'
 cask 'dropbox'
 cask 'google-chrome'
 cask 'istat-menus'
-cask 'gimp'
-cask 'oni'
-cask 'postman'
 cask 'grammarly'
 cask 'cleanmymac'
 cask 'chai'

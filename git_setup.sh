@@ -2,8 +2,8 @@
 set -euo pipefail
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-EMAIL_1="scott.cranton"
-EMAIL_2="solo.io"
+EMAIL_1="scott"
+EMAIL_2="cranton.com"
 
 set -x
 
