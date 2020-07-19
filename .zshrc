@@ -70,8 +70,9 @@ PATH="$HOMEBREW/opt/openssl/bin:$PATH"
 PATH="$HOMEBREW/opt/ruby/bin:$PATH"
 
 # go tools
-export GOPATH="$HOME/go"
-PATH="$PATH:$GOPATH/bin"
+export GOPATH="${HOME}/go"
+export GOROOT="${HOMEBREW}/opt/go/libexec"
+PATH="${PATH}:${GOPATH}/bin"
 
 # git: use system ssh for git, otherwise UseKeychain option doesn't work
 export GIT_SSH=/usr/bin/ssh
@@ -80,12 +81,12 @@ export GIT_SSH=/usr/bin/ssh
 PATH="$HOMEBREW/opt/python/libexec/bin:$PATH"
 
 # virtualenvwrapper
-if [[ -f $HOMEBREW/bin/virtualenvwrapper.sh ]]; then
-	export WORKON_HOME=$HOME/workspace/.virtualenvs
-	source "$HOMEBREW/bin/virtualenvwrapper.sh"
-else
-	log "WARNING: skipping loading virtualenvwrapper"
-fi
+# if [[ -f $HOMEBREW/bin/virtualenvwrapper.sh ]]; then
+# 	export WORKON_HOME=$HOME/workspace/.virtualenvs
+# 	source "$HOMEBREW/bin/virtualenvwrapper.sh"
+# else
+# 	log "WARNING: skipping loading virtualenvwrapper"
+# fi
 
 # gcloud completion scripts via brew cask installation
 if [[ -f $HOMEBREW/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc ]]; then # brew cask installation
@@ -184,3 +185,11 @@ autoload -U +X bashcompinit && bashcompinit
 # JEnv setup
 export PATH="${HOME}/.jenv/bin:${PATH}"
 eval "$(jenv init -)"
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME
+
+export PATH="$HOME/.cargo/bin:$PATH"
