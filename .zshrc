@@ -110,15 +110,16 @@ else
 	log "WARNING: skipping loading gpg-agent"
 fi
 
+
 # kubectl completion (w/ refresh cache every 48-hours)
-if command -v kubectl > /dev/null; then
-	kcomp="$HOME/.kube/.zsh_completion"
-	if [ ! -f "$kcomp" ] ||  [ "$(( $(date +"%s") - $(stat -c "%Y" "$kcomp") ))" -gt "172800" ]; then
-		kubectl completion zsh > "$kcomp"
-		log "refreshing kubectl zsh completion to $kcomp"
-	fi
-	source "$kcomp"
-fi
+# if command -v kubectl >/dev/null; then
+# 	kcomp="$HOME/.kube/.zsh_completion"
+# 	if [ ! -f "$kcomp" ] ||  [ "$(( $(date +"%s") - $(stat -c "%Y" "$kcomp") ))" -gt "172800" ]; then
+# 		kubectl completion zsh > "$kcomp"
+# 		log "refreshing kubectl zsh completion to $kcomp"
+# 	fi
+# 	source "$kcomp"
+# fi
 
 # fzf completion. run $HOMEBREW/opt/fzf/install to create the ~/.fzf.* script
 if type fzf &>/dev/null && [ -f ~/.fzf.zsh ]; then
@@ -129,7 +130,7 @@ fi
 
 # kubectl aliases from https://github.com/ahmetb/kubectl-alias
 #    > use sed to hijack --watch to watch $@.
-[ -f ~/.kubectl_aliases ] && source <(cat ~/.kubectl_aliases | sed -r 's/(kubectl.*) --watch/watch \1/g')
+[ -f ~/.kubectl_aliases ] && source <(sed -r 's/(kubectl.*) --watch/watch \1/g' <~/.kubectl_aliases)
 
 # kube-ps1
 if [[ -f $HOMEBREW/opt/kube-ps1/share/kube-ps1.sh ]]; then
@@ -186,10 +187,10 @@ autoload -U +X bashcompinit && bashcompinit
 export PATH="${HOME}/.jenv/bin:${PATH}"
 eval "$(jenv init -)"
 
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export JAVA_HOME
 
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="${HOME}/.cargo/bin:${PATH}"
+export RUST_SRC_PATH=${HOME}/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
+export DYLD_LIBRARY_PATH=${HOME}/.rustup/toolchains/stable-x86_64-apple-darwin/lib
+export RLS_ROOT=${HOME}/workspace/rust/rls
