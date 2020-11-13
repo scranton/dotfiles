@@ -187,7 +187,7 @@ autoload -U +X bashcompinit && bashcompinit
 export PATH="${HOME}/.jenv/bin:${PATH}"
 eval "$(jenv init -)"
 
-JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+JAVA_HOME=$(/usr/libexec/java_home -v 11)
 export JAVA_HOME
 
 export PATH="${HOME}/.cargo/bin:${PATH}"
