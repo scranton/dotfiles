@@ -21,7 +21,7 @@ GOPKGS=(
 	github.com/cweill/gotests/... \
 	github.com/derekparker/delve/cmd/dlv \
 	github.com/fatih/gomodifytags \
-	golang.org/x/lint/golint \
+	github.com/golang/lint/golint \
 	github.com/haya14busa/goplay/cmd/goplay \
 	github.com/josharian/impl \
 	github.com/nsf/gocode \
@@ -47,13 +47,13 @@ GOPKGS=(
 	github.com/golang/protobuf/protoc-gen-go \
 	github.com/spf13/cobra/cobra \
 	github.com/ahmetb/govvv \
-	github.com/go-delve/delve/cmd/dlv \
-	# sigs.k8s.io/kind \
 
 	# misc
 	github.com/shurcooL/markdownfmt \
 	github.com/cpuguy83/go-md2man \
-	github.com/rakyll/hey
+	golang.org/x/vgo \
+	github.com/rakyll/hey \
+	github.com/ahmetb/iamutil
 	)
 
 GOPATH="$GOTOOLS" go get -u "${GOPKGS[@]}"

@@ -1,4 +1,9 @@
-# sourced from .zshrc
+# This script is sourced from .zshrc.
+
+# Add GNU tools not linked by Homebrew.
+alias find='gfind'
+alias xargs='gxargs'
+alias stat='gstat'
 
 # convenience aliases
 alias cd..='cd ..'
@@ -10,6 +15,7 @@ alias la='ls -lah'
 alias ll='ls -l'
 alias ls-l='ls -l'
 alias j='jobs'
+alias time='gtime --format "$(tput setab 255)$(tput setaf 160)took %es.$(tput sgr0)"'
 alias vi='vim'
 alias grep='grep -E --color'
 alias ping='ping -c 3'
@@ -30,16 +36,22 @@ alias ccat='ccat --bg=dark'
 alias c.='code .'
 alias code.='code .'
 alias fd='fd --no-ignore'
-alias stat='gstat'
+alias ag='ag --hidden'
 
 # cloud stuff
 alias d='docker'
 alias dr='docker run --rm -i -t'
-alias dm='docker-machine'
+alias dx='docker exec -i -t'
+alias db='docker build -t'
+
+# google cloud platform
+alias gcurl='curl -k --header "Authorization: Bearer $(gcloud auth print-access-token -q)"'
 alias gke='gcloud container clusters'
 alias gkedel='gcloud container clusters delete -q --async'
 alias gce='gcloud compute instances'
 alias gcssh='gcloud compute ssh'
+alias runlist='gcloud run services list --platform=managed'
+alias rundel='gcloud run services delete -q --platform=managed --region us-central1'
 
 # git aliases
 alias gc='_git_dbg commit -S -v -s'
@@ -63,6 +75,8 @@ alias pkr='pbpaste | kubectl delete -f-'
 alias pkd='pbpaste | kubectl describe -f-'
 alias kpl='kubectl plugin'
 alias krew_install_clipboard='kubectl krew install --manifest <(pbpaste)'
+alias kk='kubectl krew'
+
 
 # misc shortcuts
 alias tunneloff='networksetup -setsocksfirewallproxystate Wi-Fi off && echo Tunnel is turned off.'

@@ -11,10 +11,14 @@ set -x
 git config --global user.name "Scott Cranton"
 git config --global user.email "${EMAIL_1}@${EMAIL_2}"
 
+# pull strategy
+git config --global pull.ff only
+
 # use https remotes and osxkeychain for creds
 git config --global credential.helper osxkeychain
 git config --global url.git\@github\.com\:.pushInsteadOf https://github.com/
 git config --global gpg.program "gpg"
+git config --global commit.gpgsign true  # if you want to sign every commit
 
 # use ssh in hub (commented out since pushInsteadOf)
 # git config --global hub.protocol ssh # https://github.com/github/hub/issues/1614
@@ -33,6 +37,9 @@ git config --global color.diff.old "red bold"
 git config --global color.diff.new "green bold"
 git config --global color.diff.whitespace "red reverse"
 
+# rebase helper
+git config --global sequence.editor interactive-rebase-tool
+
 # install symlink for ssh config
 SSH_CONFIG="$HOME/.ssh/config"
 if [[ -f "$SSH_CONFIG" ]]; then
@@ -41,6 +48,7 @@ fi
 ln -s "$SCRIPT_DIR/ssh_config" "$SSH_CONFIG"
 
 git config --global core.editor "vim"
+git config --global core.excludesfile ~/.gitignore_global
 
 # use vscode as the editor
 # git config --global core.editor "code --wait"

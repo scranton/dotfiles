@@ -4,5 +4,5 @@ IgnoreUnknown UseKeychain
 Host github.com *.github.com
 	HostName github.com
 	User git
-	IdentityFile ~/.ssh/id_rsa
+	IdentityFile ~/.ssh/github_rsa
 	UseKeychain yes

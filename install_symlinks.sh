@@ -42,7 +42,7 @@ ZSH_AUTOSUGGESTIONS=~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 [[ -d "$ZSH_AUTOSUGGESTIONS" ]] || git clone \
 	https://github.com/zsh-users/zsh-autosuggestions "$ZSH_AUTOSUGGESTIONS"
 
-# install zsh-autosuggestions
+# install zsh-syntax-highlighting
 ZSH_SYNTAX_HIGHLIGHTING=~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 [[ -d "$ZSH_SYNTAX_HIGHLIGHTING" ]] || git clone \
 	https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_SYNTAX_HIGHLIGHTING"

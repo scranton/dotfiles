@@ -161,9 +161,6 @@ if command -v direnv > /dev/null; then
 	eval "$(direnv hook zsh)"
 fi
 
-# finally, export the PATH
-export PATH
-
 # ---------------------- MAKE PAINFULLY SLOW PASTE FAST ---------------------- #
 
 # https://github.com/zsh-users/zsh-autosuggestions/issues/238#issuecomment-389324292
@@ -183,14 +180,19 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 autoload -U +X bashcompinit && bashcompinit
 
+# ---------------------------------------------------------------------------- #
+
 # JEnv setup
-export PATH="${HOME}/.jenv/bin:${PATH}"
+PATH="${HOME}/.jenv/bin:${PATH}"
 eval "$(jenv init -)"
 
 JAVA_HOME=$(/usr/libexec/java_home -v 11)
 export JAVA_HOME
 
-export PATH="${HOME}/.cargo/bin:${PATH}"
+PATH="${HOME}/.cargo/bin:${PATH}"
 export RUST_SRC_PATH=${HOME}/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
 export DYLD_LIBRARY_PATH=${HOME}/.rustup/toolchains/stable-x86_64-apple-darwin/lib
 export RLS_ROOT=${HOME}/workspace/rust/rls
+
+# finally, export the PATH
+export PATH
