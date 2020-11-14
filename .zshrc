@@ -106,6 +106,7 @@ fi
 # GPG integration: https://gist.github.com/bmhatfield/cc21ec0a3a2df963bffa3c1f884b676b
 if [[ -f $HOME/.gnupg/gpg_profile ]] && command -v gpg-agent > /dev/null; then
 	source "$HOME/.gnupg/gpg_profile"
+    export GPG_TTY=`tty`
 else
 	log "WARNING: skipping loading gpg-agent"
 fi
