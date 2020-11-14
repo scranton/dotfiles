@@ -1,5 +1,6 @@
 # scranton's macOS Setup
-_forked from https://github.com/ahmetb/dotfiles_
+
+_forked from <https://github.com/ahmetb/dotfiles>_
 
 ## OS Settings
 
@@ -43,7 +44,7 @@ defaults write 'Apple Global Domain' NSAutomaticPeriodSubstitutionEnabled 0
 
 ## Shell
 
-Install oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh
+Install oh-my-zsh: <https://github.com/robbyrussell/oh-my-zsh>
 
 ```sh
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -57,6 +58,7 @@ chsh -s /bin/zsh
 
       git clone https://github.com/Homebrew/brew.git $HOME/.homebrew
  -->
+
 - Run `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 - Run `which brew` to confirm the one in home directory is picked up.
 - Run `brew analytics off`
@@ -68,11 +70,9 @@ symlinked at `~/.Brewfile` and used by `brew bundle`.
 
 To install all the software, add it to `.Brewfile` and run:
 
-    brew bundle --global
-
-Some stuff will take long, in that case, identify which packages and update
-`.Brewfile` to install them with `args: ['force-bottle']` or do a one-off
-`brew install --force-bottle [pkg]` install.
+```sh
+brew bundle --global
+```
 
 Some things that require manual installation after Homebrew:
 
@@ -92,22 +92,32 @@ pip install virtualenvwrapper
 
 - **fzf** completion scripts:
 
-      "$HOMEBREW"/opt/fzf/install
+```sh
+"${HOMEBREW}"/opt/fzf/install
+```
 
 - **minikube** xhyve driver:
 
+```sh
       # minikube uses xhyve, which requires privileged access to the hypervisor
       sudo chown root:wheel /usr/local/opt/docker-machine-driver-hyperkit/bin/docker-machine-driver-hyperkit
       sudo chmod u+s /usr/local/opt/docker-machine-driver-hyperkit/bin/docker-machine-driver-hyperkit
+```
+
+## Install Rust
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
 
 ## Settings Sync
 
 - Clone this repo and run `install_symlinks.sh`
-    - Open a new terminal to take effect.
+  - Open a new terminal to take effect.
 - iTerm2->Preferences->Load Preferences From: com.googlecode.iterm2.plist directory.
-    - Restart iTerm2.
+  - Restart iTerm2.
 
-- For GPG instructions, follow [.gnupg/README](.gnupg/README) file.
+- For GPG instructions, follow [.gnupg/README.md](.gnupg/README.md) file.
 
 - VSCode:
   - Install "Settings Sync" extension and reload.
@@ -122,23 +132,31 @@ pip install virtualenvwrapper
 
 Run:
 
-    ./git_setup.sh
+```sh
+./git_setup.sh
+```
 
 Generate key with a password:
 
-    ssh-keygen -f $HOME/.ssh/id_rsa
+```sh
+ssh-keygen -f $HOME/.ssh/github_rsa
+```
 
 (You may want to redact hostname from the public key.)
 
 Add key to the keychain:
 
-    ssh-add $HOME/.ssh/id_rsa          # company-installed
-    /usr/bin/ssh-add $HOME/.ssh/id_rsa # system
+```sh
+ssh-add $HOME/.ssh/github_rsa          # company-installed
+/usr/bin/ssh-add $HOME/.ssh/github_rsa # system
+```
 
-Upload the key to GitHub. https://github.com/settings/keys
+Upload the key to GitHub. <https://github.com/settings/keys>
 
 Save this to ~/.ssh/config:
 
 Test connection:
 
-    ssh -T git@github.com -i ~/.ssh/id_rsa
+```sh
+ssh -T git@github.com -i ~/.ssh/github_rsa
+```

@@ -111,7 +111,6 @@ else
 	log "WARNING: skipping loading gpg-agent"
 fi
 
-
 # kubectl completion (w/ refresh cache every 48-hours)
 # if command -v kubectl >/dev/null; then
 # 	kcomp="$HOME/.kube/.zsh_completion"

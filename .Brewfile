@@ -5,7 +5,6 @@ tap 'homebrew/core'
 tap 'weaveworks/tap'
 tap 'adoptopenjdk/openjdk'
 tap 'azure/draft'
-# tap 'bazelbuild/tap'
 tap 'homebrew/cask'
 
 # System tools
@@ -30,7 +29,6 @@ brew 'pv'
 brew 'unrar'
 brew 'shfmt'
 brew 'sleepwatcher'
-# cask 'gpg-suite'
 
 # Development & Power Tools
 cask 'iterm2'
@@ -52,7 +50,7 @@ brew 'grv'
 brew 'hub'
 brew 'jq'
 brew 'node'
-brew 'rust'
+# brew 'rust'
 brew 'libyaml'
 brew 'ruby'
 # brew 'python2'
@@ -102,6 +100,7 @@ brew 'grpcurl'
 # Commit signing
 brew 'pinentry-mac'
 brew 'gnupg'
+brew 'gpg2'
 
 # Containers
 brew 'kubernetes-cli'
