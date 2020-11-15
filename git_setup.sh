@@ -18,7 +18,7 @@ git config --global pull.ff only
 git config --global credential.helper osxkeychain
 git config --global url.git\@github\.com\:.pushInsteadOf https://github.com/
 git config --global gpg.program "gpg"
-git config --global commit.gpgsign true  # if you want to sign every commit
+git config --global commit.gpgsign true # if you want to sign every commit
 
 # use ssh in hub (commented out since pushInsteadOf)
 # git config --global hub.protocol ssh # https://github.com/github/hub/issues/1614
@@ -43,7 +43,7 @@ git config --global sequence.editor interactive-rebase-tool
 # install symlink for ssh config
 SSH_CONFIG="$HOME/.ssh/config"
 if [[ -f "$SSH_CONFIG" ]]; then
-	rm "$SSH_CONFIG"
+    rm "$SSH_CONFIG"
 fi
 ln -s "$SCRIPT_DIR/ssh_config" "$SSH_CONFIG"
 

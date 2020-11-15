@@ -1,7 +1,12 @@
 # shellcheck disable=SC2034
 
 # ZSH settings
-export ZSH=/Users/$USER/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -9,8 +14,11 @@ ZSH_THEME="robbyrussell"
 plugins=(git colored-man-pages zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
 source "$ZSH/oh-my-zsh.sh"
 
-export UPDATE_ZSH_DAYS=14
+# Uncomment the following line to automatically update without prompting.
 export DISABLE_UPDATE_PROMPT=true # accept updates by default
+
+# Uncomment the following line to change how often to auto-update (in days).
+export UPDATE_ZSH_DAYS=14
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -20,16 +28,16 @@ export DISABLE_UPDATE_PROMPT=true # accept updates by default
 
 # Load custom functions
 if [[ -f $HOME/workspace/dotfiles/zsh_functions.inc ]]; then
-	source "$HOME/workspace/dotfiles/zsh_functions.inc"
+    source "$HOME/workspace/dotfiles/zsh_functions.inc"
 else
-	echo >&2 "WARNING: can't load shell functions"
+    echo >&2 "WARNING: can't load shell functions"
 fi
 
 # Load custom aliases
 if [[ -f $HOME/workspace/dotfiles/zsh_aliases.inc ]]; then
-	source "$HOME/workspace/dotfiles/zsh_aliases.inc"
+    source "$HOME/workspace/dotfiles/zsh_aliases.inc"
 else
-	echo >&2 "WARNING: can't load shell aliases"
+    echo >&2 "WARNING: can't load shell aliases"
 fi
 
 # User configuration
@@ -141,8 +149,8 @@ if [[ -f $HOMEBREW/opt/kube-ps1/share/kube-ps1.sh ]]; then
 fi
 
 # add dotfiles/bin to PATH
-if [[ -d /Users/$USER/workspace/dotfiles/bin ]]; then
-	PATH="/Users/$USER/workspace/dotfiles/bin:${PATH}"
+if [[ -d $HOME/workspace/dotfiles/bin ]]; then
+	PATH="$HOME/workspace/dotfiles/bin:${PATH}"
 fi
 
 # load zsh plugins installed via brew

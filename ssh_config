@@ -6,3 +6,8 @@ Host github.com *.github.com
 	User git
 	IdentityFile ~/.ssh/github_rsa
 	UseKeychain yes
+
+Host *
+	AddKeysToAgent yes
+	UseKeychain yes
+	IdentityFile ~/.ssh/id_ed25519
