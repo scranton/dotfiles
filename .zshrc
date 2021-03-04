@@ -202,5 +202,10 @@ export RUST_SRC_PATH=${HOME}/.rustup/toolchains/stable-x86_64-apple-darwin/lib/r
 export DYLD_LIBRARY_PATH=${HOME}/.rustup/toolchains/stable-x86_64-apple-darwin/lib
 export RLS_ROOT=${HOME}/workspace/rust/rls
 
+export GETISTIO_HOME="${HOME}/.getistio"
+PATH="${GETISTIO_HOME}/bin:${PATH}"
+
+PATH="${HOME}/bin:${PATH}"
+
 # finally, export the PATH
 export PATH
