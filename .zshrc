@@ -209,3 +209,5 @@ PATH="${HOME}/bin:${PATH}"
 
 # finally, export the PATH
 export PATH
+
+complete -o nospace -C /usr/local/bin/terraform terraform
